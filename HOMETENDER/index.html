@@ -14,7 +14,19 @@
       href="https://fonts.googleapis.com/css2?family=Courgette&family=Island+Moments&display=swap"
       rel="stylesheet"
     />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Pacifico&display=swap"
+      rel="stylesheet"
+    />
 
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@600&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Bebas+Neue&display=swap"
+      rel="stylesheet"
+    />
     <!-- ------------------- SCRIPTS ------------------------ -->
 
     <script
@@ -26,23 +38,46 @@
     <section class="container">
       <div class="navbar">
         <div class="logo">
-          <i class="fa-solid fa-martini-glass icons"></i>
-          <p>HOMETENDER</p>
+          <i class="fa-solid fa-martini-glass"></i>
+          <p>Hometender</p>
         </div>
-        <a class="active" href="/index.html">Home</a>
-        <p>|</p>
-        <a href="/drinks.html">Today</a>
-        <p>|</p>
-        <a href="/recipes.html">Recipes</a>
-        <p>|</p>
-        <a href="/sign.html">Sign Up</a>
+        <div class="navbar-a">
+          <a class="active" href="/index.html">Home</a>
+          <p>|</p>
+          <a href="/drinks.html">Today</a>
+          <p>|</p>
+          <a href="/recipes.html">Recipes</a>
+          <p>|</p>
+          <a href="/sign.html">Sign Up</a>
+        </div>
       </div>
       <div class="carousel">
-        <img
-          src="./public/images/Search for ingredients.png"
-          alt="cocktail-image"
-          class="carousel-image"
-        />
+        <div class="carousel-btns">
+          <button class="prev"><a onclick="plusSlides(-1)">❮</a></button>
+          <button class="next"><a onclick="plusSlides(1)">❯</a></button>
+        </div>
+
+        <div class="carousel-image">
+          <img
+            src="./public/images/Search for ingredients.png"
+            alt="cocktail-image"
+          />
+        </div>
+        <!-- <div class="carousel-image">
+          <img
+            src="./public/images/Search for ingredients.png"
+            alt="cocktail-image"
+          />
+        </div>
+        <div class="carousel-image">
+          <img
+            src="./public/images/Search for ingredients.png"
+            alt="cocktail-image"
+          />
+        </div> -->
+        <!-- <span class="dot">.</span>
+        <span class="dot">.</span>
+        <span class="dot">.</span> -->
       </div>
       <div class="content">
         <div class="paragraph">
@@ -55,9 +90,16 @@
             Download our APP, make your recipes and share with friends!
           </p>
         </div>
-        <div>
-          <p>DESCARGA</p>
-          <p>DESCARGA</p>
+        <div class="download-text">
+          <p>Download it!</p>
+          <div class="download-btns">
+            <button class="btn">
+              <i class="fa-brands fa-apple"></i>App Store
+            </button>
+            <button class="btn">
+              <i class="fa-brands fa-google-play"></i> Google Play
+            </button>
+          </div>
           <img
             src="./public/images/PHONE.png"
             alt="Phone"
@@ -66,25 +108,28 @@
         </div>
       </div>
       <div class="footer">
-        <div><p>Follow us on Social Media /@Hometender</p></div>
         <div>
           <div>
-            <a href="https://www.instagram.com/"
-              ><i class="fa-brands fa-instagram icons fa-2x"></i
-            ></a>
-          </div>
-          <div>
-            <a href="https://www.tiktok.com/es/"
-              ><i class="fa-brands fa-tiktok icons fa-2x"></i
-            ></a>
-          </div>
-          <div>
-            <a href="https://twitter.com/"
-              ><i class="fa-brands fa-twitter fa-2x icons"></i
-            ></a>
+            <div>
+              <a href="https://www.instagram.com/"
+                ><i class="fa-brands fa-instagram icons fa-2x"></i
+              ></a>
+            </div>
+            <div>
+              <a href="https://www.tiktok.com/es/"
+                ><i class="fa-brands fa-tiktok icons fa-2x"></i
+              ></a>
+            </div>
+            <div>
+              <a href="https://twitter.com/"
+                ><i class="fa-brands fa-twitter fa-2x icons"></i
+              ></a>
+            </div>
           </div>
         </div>
-        <div><p style="font-size: 30px">©Copyright 2022</p></div>
+        <div class="footer-p">
+          <p style="font-size: 30px">©Copyright 2022</p>
+        </div>
       </div>
     </section>
   </body>
