@@ -51,18 +51,45 @@
           <a href="/sign.html">Sign Up</a>
         </div>
       </div>
+
+      <!-- ---------------------------CAROUSEL----------------------------- -->
+
       <div class="carousel">
         <div class="carousel-btns">
-          <button class="prev"><a onclick="plusSlides(-1)">❮</a></button>
-          <button class="next"><a onclick="plusSlides(1)">❯</a></button>
+          <button class="prev"><a>❮</a></button>
+          <button class="next"><a>❯</a></button>
         </div>
 
         <div class="carousel-image">
           <img
             src="./public/images/Search for ingredients.png"
             alt="cocktail-image"
+            id="picture-ingredients"
           />
         </div>
+        <div class="carousel-image">
+          <img
+            src="./public/images/drinks at home (2).png"
+            alt="cocktail-image"
+            id="picture-ingredients"
+            class="picture-inactive"
+          />
+        </div>
+        <div class="carousel-image">
+          <img
+            src="./public/images/500 RECIPES.png"
+            alt="cocktail-image"
+            id="picture-ingredients"
+            class="picture-inactive"
+          />
+        </div>
+
+        <div class="dot-container">
+          <span class="dot"></span>
+          <span class="dot active"></span>
+          <span class="dot"></span>
+        </div>
+
         <!-- <div class="carousel-image">
           <img
             src="./public/images/Search for ingredients.png"
@@ -132,5 +159,6 @@
         </div>
       </div>
     </section>
+    <script src="./app.js"></script>
   </body>
 </html>
