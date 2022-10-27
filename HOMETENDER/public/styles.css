@@ -148,8 +148,15 @@ CAROUSEL
 .carousel-image {
   height: 100%;
   width: 100%;
+
   /* width: 100%; */
   /* object-fit: cover; */
+}
+
+.slide {
+  height: 100%;
+  width: 100%;
+  object-fit: cover;
 }
 
 .carousel-image img {
@@ -158,8 +165,26 @@ CAROUSEL
   object-fit: cover;
 }
 
-.mySlide {
-  display: none;
+.dot-container {
+  display: flex;
+  position: absolute;
+  top: 92%;
+  justify-content: center;
+  width: 100%;
+  gap: 50px;
+}
+
+.dot {
+  display: inline-block;
+  background-color: rgba(150, 142, 80, 0.6);
+  border-radius: 100%;
+  width: 30px;
+  height: 30px;
+  border: none;
+}
+
+.active {
+  background-color: rgba(0, 0, 0, 0.8);
 }
 
 /* 
@@ -176,8 +201,15 @@ CONTENT
 }
 
 .content .paragraph {
-  padding-top: 3rem;
+  /* Trrabajo Padding */
+  /* padding-top: 3rem;
+  padding-left: 3.5rem; */
+  /*  */
+
+  /* Casa Centrado */
+  margin-top: 8rem;
   padding-left: 3.5rem;
+  /*  */
   width: 42%;
   height: 100%;
 }
@@ -195,8 +227,15 @@ CONTENT
 /* -------------- DOWNLOAD CONTENT ------------------- */
 .phone-image {
   position: absolute;
+  /* Trabajo centrado
+  
   left: 90rem;
-  top: 60rem;
+  top: 60rem; */
+
+  /* Casa centrado */
+  left: 120rem;
+  top: 90rem;
+  /* ----- */
   height: 800px;
   transform: rotate(7deg);
 }
@@ -238,7 +277,15 @@ CONTENT
 .download-text p {
   color: var(--secondary-active-font);
   justify-content: left;
-  padding-top: 7rem;
+  /* 
+  Trabajo Centrado
+  padding-top: 7rem;  */
+  /*  */
+
+  /* Casa Centrado */
+  padding-top: 12rem;
+  padding-left: 5rem;
+  /*  */
   font-size: 10rem;
   font-weight: bold;
 }
