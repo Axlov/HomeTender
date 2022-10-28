@@ -118,6 +118,7 @@ CAROUSEL
   display: flex;
   top: 50%;
   justify-content: space-between;
+  z-index: 99;
 }
 
 .prev,
@@ -133,6 +134,7 @@ CAROUSEL
   user-select: none;
   cursor: pointer;
   border-radius: 0 15px 15px 0;
+  z-index: 99;
   justify-content: center;
 }
 
@@ -143,14 +145,13 @@ CAROUSEL
 .next:hover {
   background-color: rgba(0, 0, 0, 0.8);
   color: var(--secondary-active-font);
+  z-index: 99;
 }
 
 .carousel-image {
   height: 100%;
   width: 100%;
-
-  /* width: 100%; */
-  /* object-fit: cover; */
+  position: absolute;
 }
 
 .slide {
@@ -165,6 +166,10 @@ CAROUSEL
   object-fit: cover;
 }
 
+.picture-inactive {
+  display: none;
+}
+
 .dot-container {
   display: flex;
   position: absolute;
@@ -172,6 +177,7 @@ CAROUSEL
   justify-content: center;
   width: 100%;
   gap: 50px;
+  z-index: 99;
 }
 
 .dot {
@@ -181,9 +187,10 @@ CAROUSEL
   width: 30px;
   height: 30px;
   border: none;
+  cursor: pointer;
 }
 
-.active {
+.active-dot {
   background-color: rgba(0, 0, 0, 0.8);
 }
 
@@ -202,13 +209,13 @@ CONTENT
 
 .content .paragraph {
   /* Trrabajo Padding */
-  /* padding-top: 3rem;
-  padding-left: 3.5rem; */
+  padding-top: 3rem;
+  padding-left: 3.5rem;
   /*  */
 
   /* Casa Centrado */
-  margin-top: 8rem;
-  padding-left: 3.5rem;
+  /* margin-top: 8rem;
+  padding-left: 3.5rem; */
   /*  */
   width: 42%;
   height: 100%;
@@ -227,14 +234,14 @@ CONTENT
 /* -------------- DOWNLOAD CONTENT ------------------- */
 .phone-image {
   position: absolute;
-  /* Trabajo centrado
-  
+  /* Trabajo centrado */
+
   left: 90rem;
-  top: 60rem; */
+  top: 60rem;
 
   /* Casa centrado */
-  left: 120rem;
-  top: 90rem;
+  /* left: 120rem;
+  top: 90rem; */
   /* ----- */
   height: 800px;
   transform: rotate(7deg);
@@ -277,14 +284,14 @@ CONTENT
 .download-text p {
   color: var(--secondary-active-font);
   justify-content: left;
-  /* 
-  Trabajo Centrado
-  padding-top: 7rem;  */
+
+  /* Trabajo Centrado */
+  padding-top: 7rem;
   /*  */
 
   /* Casa Centrado */
-  padding-top: 12rem;
-  padding-left: 5rem;
+  /* padding-top: 12rem;
+  padding-left: 5rem; */
   /*  */
   font-size: 10rem;
   font-weight: bold;
