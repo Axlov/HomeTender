@@ -1,19 +1,84 @@
 "use strict";
 
-const nextBtn = document.getElementsByClassName("next");
-const prevBtn = document.getElementsByClassName("prev");
-const slides = document.getElementsByClassName("carousel-image");
-const mega = document.getElementsByClassName("carousel");
+const nextBtn = document.querySelector(".next");
+// const nextBtn = document.getElementsByClassName("next")[0];
+const prevBtn = document.querySelector(".prev");
+const slides = document.querySelectorAll(".carousel-image");
+const container = document.querySelector(".carousel");
+const dots = [...document.querySelectorAll(".dot")];
 
-console.log(nextBtn, prevBtn, slides, mega);
+const dotOne = dots[0];
+const dotTwo = dots[1];
+const dotThree = dots[2];
 
+console.log(nextBtn, prevBtn, slides, container, dots);
 // let curSlide = 0;
 
-nextBtn.addEventListener("click", function () {
-  console.log(`qewqe`);
-  curSlide++;
+///////////////////// Carousel Function ////////////////////////////////
 
-  slides.forEach(
-    (s, i) => (s.style.transform = `translateX(${100 * (i - curSlide)}%)`)
-  );
+// slides vars
+let curSlide = 2;
+const maxSlide = slides.length - 1;
+
+///////Function Active Dots///////////////////
+
+function activeDot(curSlide) {
+  dots.forEach((dot, index) => {
+    if (index === curSlide) {
+      dot.classList.toggle("active-dot");
+    } else {
+      dot.classList.remove("active-dot");
+    }
+  });
+}
+
+// //////Function that moves carousel/////////
+
+function moveCarousel(curSlide) {
+  slides.forEach((slide, index) => {
+    // loop on the array of slides and moovef
+    slide.style.transform = `translateX(${(index - curSlide) * 100}%)`;
+    // Slide[0]=0%
+    // slide[1]=100%
+    // slide[2]=200%
+  });
+  activeDot(curSlide);
+}
+
+// /////////////////AutoMove Carousel///////////////////////////////
+
+// moves carousel auto every 3 s
+
+// setInterval(() => {
+//   curSlide === maxSlide ? (curSlide = 0) : curSlide++;
+//   moveCarousel(curSlide);
+// }, 3000);
+
+// Buttons Functionality
+nextBtn.addEventListener("click", function () {
+  // if the current slide is the maxSlide return to slide0 else current slide+1
+  curSlide === maxSlide ? (curSlide = 0) : curSlide++;
+  moveCarousel(curSlide);
+});
+
+prevBtn.addEventListener("click", function () {
+  // same as with maxSlide
+  curSlide === 0 ? (curSlide = maxSlide) : curSlide--;
+  moveCarousel(curSlide);
+});
+
+dotOne.addEventListener("click", function () {
+  //
+  curSlide = 0;
+  moveCarousel(curSlide);
+});
+
+dotTwo.addEventListener("click", function () {
+  curSlide = 1;
+  moveCarousel(curSlide);
+});
+
+dotThree.addEventListener("click", function () {
+  curSlide = 2;
+  moveCarousel(curSlide);
 });
