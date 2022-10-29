@@ -1,459 +1,84 @@
-:root {
-  --main-color: #595230;
-  --secondary-color: #0d0c07;
-  --secondary-active-font: #f7eb88;
-  --secondary-inactive-font: #968e50;
-  --paragraph-font: #dcddde;
-}
-
-body {
-  height: 100%;
-  width: 100%;
-  margin: 0;
-  /* overflow-y: hidden; */
-  font-family: "Island Moments", cursive;
-}
-
-body::-webkit-scrollbar {
-  display: none;
-}
-
-/* /////////////////////////HOME GRID/////////////////////////////////////// */
-
-.container {
-  display: grid;
-  /* grid-template: Filas / Columnas*/
-  grid-template: 110px calc(100vh - 110px) calc(100vh - 150px) 150px / 1fr;
-
-  grid-template-areas:
-    "navbar"
-    "carousel"
-    "content"
-    "footer";
-
-  height: 100vh;
-  width: 100%;
-}
-
-/* ////////////////////////////////////END/////////////////////////////////// */
-
-/* /////////////////////////////ONE PAGE GRID//////////////////////////////// */
-
-.one-page {
-  display: grid;
-  /* grid-template: Filas / Columnas*/
-  grid-template: 110px 100vh 150px / 1fr;
-
-  grid-template-areas:
-    "navbar"
-    "content"
-    "footer";
-
-  height: 100vh;
-  width: 100%;
-}
-
-/* ////////////////////////////////////END/////////////////////////////////// */
-
-/* ////////////////STYLES IN COMMON /////////////////////////////////// */
-
-/* 
-NAVBAR 
-*/
-
-.navbar {
-  font-size: 60px;
-  background-color: var(--secondary-color);
-  grid-area: navbar;
-  /* display: flex; */
-  padding-right: 35px;
-  /* justify-content: flex-end; */
-  column-gap: 10px;
-
-  padding-bottom: 0.5rem;
-  box-shadow: 0px 0px 100px 10px var(--main-color);
-  z-index: 100;
-  float: right;
-  overflow: hidden;
-}
-
-.navbar a {
-  float: right;
-  color: var(--secondary-inactive-font);
-  text-align: center;
-  text-decoration: none;
-}
-
-.navbar a:hover {
-  color: var(--paragraph-font);
-}
-
-.navbar a.active {
-  color: var(--secondary-active-font);
-}
-
-.logo {
-  color: var(--secondary-inactive-font);
-  display: flex;
-  margin-left: 4rem;
-  font-size: 6rem;
-  /* align-self: flex-end; */
-  /* justify-self: flex-start; */
-  /* padding-top: 0.5rem; */
-  /* right: 74%; */
-  float: left;
-  justify-content: space-evenly;
-  padding-top: 0.5rem;
-  gap: 2rem;
-  font-weight: bold;
-}
-
-.navbar-a {
-  display: flex;
-  float: right;
-  justify-self: end;
-  padding-top: 2.5rem;
-}
-
-.navbar p {
-  color: var(--secondary-inactive-font);
-  margin: 0;
-}
-
-/* 
-FOOTER
-*/
-
-.footer {
-  grid-area: footer;
-  background-color: var(--secondary-color);
-  box-shadow: 0px 0px 100px 10px var(--secondary-color);
-  color: var(--secondary-inactive-font);
-  z-index: 50;
-  display: flex;
-  /* align-items: center centra en el eje vertical */
-  align-items: center;
-  justify-content: center;
-  text-align: center;
-  flex-direction: column;
-}
-
-.footer-p {
-  display: flex;
-  font-size: 50px;
-  margin: 0;
-  /* align-self: flex-end; */
-}
-.footer-p p {
-  margin: 0;
-}
-
-.footer div {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  gap: 80px;
-}
-
-.icons {
-  color: var(--secondary-inactive-font);
-  padding-bottom: 1.2rem;
-}
-
-.icons:hover {
-  color: var(--secondary-active-font);
-}
-
-/* ////////////////////////////////////END/////////////////////////////////// */
-
-/* //////////////////////////////HOME PAGE/////////////////////////////////// */
-
-/* 
-CAROUSEL
-*/
-
-.carousel {
-  display: inline-flex;
-  flex-direction: column;
-  flex-wrap: wrap;
-  position: relative;
-  grid-area: carousel;
-  /* position: absolute; */
-  background-color: aqua;
-  box-shadow: 0px 0px 100px 10px var(--secondary-color);
-  z-index: 50;
-}
-
-.carousel-btns {
-  position: absolute;
-  width: 100%;
-  display: flex;
-  top: 50%;
-  justify-content: space-between;
-  z-index: 99;
-}
-
-.prev,
-.next {
-  color: var(--secondary-inactive-font);
-  background-color: rgba(13, 12, 7, 0.7);
-  border-color: rgba(13, 12, 7, 0.7);
-  text-decoration: none;
-  height: 6rem;
-  width: 3.5rem;
-  /* flex-wrap: wrap; */
-  font-size: 4rem;
-  user-select: none;
-  cursor: pointer;
-  border-radius: 0 15px 15px 0;
-  z-index: 99;
-  justify-content: center;
-}
-
-.next {
-  border-radius: 15px 0 0 15px;
-}
-.prev:hover,
-.next:hover {
-  background-color: rgba(0, 0, 0, 0.8);
-  color: var(--secondary-active-font);
-  z-index: 99;
-}
-
-.carousel-image {
-  height: 100%;
-  width: 100%;
-  position: absolute;
-}
-
-.slide {
-  height: 100%;
-  width: 100%;
-  object-fit: cover;
-}
-
-.carousel-image img {
-  height: 100%;
-  width: 100%;
-  object-fit: cover;
-}
-
-.picture-inactive {
-  display: none;
-}
-
-.dot-container {
-  display: flex;
-  position: absolute;
-  top: 92%;
-  justify-content: center;
-  width: 100%;
-  gap: 50px;
-  z-index: 99;
-}
-
-.dot {
-  display: inline-block;
-  background-color: rgba(150, 142, 80, 0.6);
-  border-radius: 100%;
-  width: 30px;
-  height: 30px;
-  border: none;
-  cursor: pointer;
-}
-
-.active-dot {
-  background-color: rgba(0, 0, 0, 0.8);
-}
-
-/* 
-CONTENT
-*/
-
-.content {
-  display: flex;
-  grid-area: content;
-  background-color: var(--main-color);
-  color: var(--paragraph-font);
-  font-size: 45px;
-  margin: 0;
-}
-
-.content .paragraph {
-  /* Trrabajo Padding */
-  padding-top: 3rem;
-  padding-left: 3.5rem;
-  /*  */
-
-  /* Casa Centrado */
-  /* margin-top: 8rem;
-  padding-left: 3.5rem; */
-  /*  */
-  width: 42%;
-  height: 100%;
-}
-
-.content p {
-  font-size: 4.2rem;
-  margin: 0;
-}
-
-.paragraph {
-  width: 58%;
-  overflow: hidden;
-}
-
-/* -------------- DOWNLOAD CONTENT ------------------- */
-.phone-image {
-  position: absolute;
-  /* Trabajo centrado */
-
-  left: 90rem;
-  top: 60rem;
-
-  /* Casa centrado */
-  /* left: 120rem;
-  top: 90rem; */
-  /* ----- */
-  height: 800px;
-  transform: rotate(7deg);
-}
-
-.btn {
-  /* font-family: "Pacifico", cursive; */
-  /* font-family: "Island Moments", cursive; */
-  font-family: "Inter", sans-serif;
-  font-weight: bolder;
-  font-weight: 0;
-  font-size: 25px;
-  width: 16.2rem;
-  color: var(--paragraph-font);
-  background-color: var(--main-color);
-  padding: 10px 30px;
-  border: 2px solid var(--paragraph-font);
-  box-shadow: var(--paragraph-font) 0px 3px 6px,
-    var(--paragraph-font) 0px 3px 6px;
-  border-radius: 16px;
-  transition: 1335ms;
-  transform: translateY(0);
-  display: flex;
-  /* flex-direction: row; */
-  align-items: center;
-  cursor: pointer;
-  justify-content: space-evenly;
-}
-
-.btn:hover {
-  transition: 1335ms;
-  /* padding: 10px 50px; */
-  transform: translateY(-12px);
-  background-color: var(--secondary-color);
-  color: var(--secondary-active-font);
-  border: solid 2px var(--secondary-active-font);
-  box-shadow: var(--secondary-active-font) 15px 5px 15px;
-}
-
-.download-text p {
-  color: var(--secondary-active-font);
-  justify-content: left;
-
-  /* Trabajo Centrado */
-  padding-top: 7rem;
-  /*  */
-
-  /* Casa Centrado */
-  /* padding-top: 12rem;
-  padding-left: 5rem; */
-  /*  */
-  font-size: 10rem;
-  font-weight: bold;
-}
-
-.download-btns {
-  display: flex;
-  justify-content: space-evenly;
-  padding-top: 5rem;
-  padding-bottom: 1rem;
-}
-
-/* ////////////////////////////////////END/////////////////////////////////// */
-
-/* /////////////////////////////TODAY PAGE/////////////////////////////////// */
-
-.today {
-  height: 100vh;
-}
-
-/* ////////////////////////////////////END/////////////////////////////////// */
-
-/* /////////////////////////////FORM PAGE/////////////////////////////////// */
-
-.login {
-  display: flexbox;
-  width: 80%;
-  height: 100%;
-  vertical-align: middle;
-  /* margin-left: 10%; */
-  justify-self: center;
-  justify-content: center;
-  margin-left: 10%;
-}
-
-.login-picture {
-  display: flex;
-  height: 40%;
-  width: 25%;
-  border-radius: 50%;
-  align-items: center;
-  justify-content: center;
-  margin-left: calc(75% / 2);
-}
-
-.form-container {
-  height: 15rem;
-  font-size: 3rem;
-}
-
-.form-container form {
-  background-color: var(--secondary-color);
-  padding: 1%;
-  border-radius: 15px;
-}
-
-input[type="text"],
-input[type="email"] {
-  font-family: "Inter", sans-serif;
-  font-size: 1.8rem;
-  width: 100%;
-  padding: 12px 20px;
-  margin: 8px 0;
-  display: inline-block;
-  border: 1px solid var(--secondary-inactive-font);
-  border-radius: 4px;
-  box-sizing: border-box;
-}
-
-input[type="submit"] {
-  font-family: "Inter", sans-serif;
-  font-size: 1.8rem;
-  width: 100%;
-  background-color: var(--secondary-inactive-font);
-  color: var(--secondary-color);
-  padding: 14px 20px;
-  margin: 8px 0;
-  border: none;
-  border-radius: 4px;
-  cursor: pointer;
-}
-
-input[type="submit"]:hover {
-  background-color: var(--secondary-active-font);
-}
-
-input[type="text"],
-input[type="email"],
-textarea {
-  background-color: var(--paragraph-font);
-}
-
-/* ////////////////////////////////////END/////////////////////////////////// */
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Hometender</title>
+    <link rel="stylesheet" href="./public/styles.css" />
+
+    <!-- -------------------- FONTS--------------------------- -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Courgette&family=Island+Moments&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Pacifico&display=swap"
+      rel="stylesheet"
+    />
+
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@600&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Bebas+Neue&display=swap"
+      rel="stylesheet"
+    />
+    <!-- ------------------- SCRIPTS ------------------------ -->
+
+    <script
+      src="https://kit.fontawesome.com/6058658a5f.js"
+      crossorigin="anonymous"
+    ></script>
+  </head>
+  <body>
+    <section class="one-page">
+      <div class="navbar">
+        <div class="logo">
+          <i class="fa-solid fa-martini-glass"></i>
+          <p>Hometender</p>
+        </div>
+        <div class="navbar-a">
+          <a href="/index.html">Home</a>
+          <p>|</p>
+          <a href="/today.html">Today</a>
+          <p>|</p>
+          <a class="active" href="/recipes.html">Recipes</a>
+          <p>|</p>
+          <a href="/sign.html">Sign Up</a>
+        </div>
+      </div>
+
+      <div class="content"></div>
+
+      <div class="footer">
+        <div>
+          <div>
+            <div>
+              <a href="https://www.instagram.com/"
+                ><i class="fa-brands fa-instagram icons fa-2x"></i
+              ></a>
+            </div>
+            <div>
+              <a href="https://www.tiktok.com/es/"
+                ><i class="fa-brands fa-tiktok icons fa-2x"></i
+              ></a>
+            </div>
+            <div>
+              <a href="https://twitter.com/"
+                ><i class="fa-brands fa-twitter fa-2x icons"></i
+              ></a>
+            </div>
+          </div>
+        </div>
+        <div class="footer-p">
+          <p style="font-size: 30px">©Copyright 2022</p>
+        </div>
+      </div>
+    </section>
+    <script src="/public/app.js"></script>
+  </body>
+</html>
