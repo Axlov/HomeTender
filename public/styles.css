@@ -407,6 +407,7 @@ CONTENT
   align-items: center;
   justify-content: center;
   margin-left: calc(75% / 2);
+  color: #0d0c07;
 }
 
 .form-container {
@@ -421,7 +422,8 @@ CONTENT
 }
 
 input[type="text"],
-input[type="email"] {
+input[type="email"],
+input[type="password"] {
   font-family: "Inter", sans-serif;
   font-size: 1.8rem;
   width: 100%;
@@ -444,6 +446,7 @@ input[type="submit"] {
   border: none;
   border-radius: 4px;
   cursor: pointer;
+  margin-top: 2%;
 }
 
 input[type="submit"]:hover {
@@ -454,6 +457,11 @@ input[type="text"],
 input[type="email"],
 textarea {
   background-color: var(--paragraph-font);
+}
+
+input[type="text"],
+::placeholder {
+  color: rgba(89, 82, 48, 0.5);
 }
 
 /* ////////////////////////////////////END/////////////////////////////////// */
