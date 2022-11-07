@@ -12,13 +12,40 @@
 // const app = express();
 
 // app.get("/index.html", function (req, res) {
+//   res.sendFile(__dirname + "/index.html");
+// });
+
+// app.get("/sign.html", function (req, res) {
+//   res.send("Server is up and running");
+// });
+
+// app.get("/today.html", function (req, res) {
 //   https.get(urlRandom, function (response) {
-//     response.on("data", function (data) {
-//       const randomDrink = JSON.parse(data);
-//       const drinkName = randomDrink.strDrink;
-//       console.log(drinkName);
-//     });
+//     const data = [];
+
+//     response
+//       .on("data", (d) => {
+//         // paso tods los datos (d) al array vacio data
+//         data.push(d);
+//       })
+//       .on("end", function () {
+//         //at this point data is an array of Buffers,so Buffer.concat() can make us a new Buffer of all of them together
+//         const buffer = Buffer.concat(data);
+//         // ahora puedo pasar el buffer a string y finalmente hacer el parseJSON
+//         const obj = JSON.parse(buffer.toString());
+//         const drink = obj.drinks[0];
+
+//         drinkName = drink.strDrink;
+//         const drinkPreparation = drink.strInstructions;
+//         console.log(drinkName, drinkPreparation);
+//       });
+
+//     res.sendFile(__dirname + "/today.html");
 //   });
+// });
+
+// app.get("/public/styles.css", function (req, res) {
+//   res.sendFile(__dirname + "/public/styles.css");
 // });
 
 // app.listen(5500, function () {
